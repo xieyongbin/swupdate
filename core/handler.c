@@ -28,7 +28,7 @@ int register_handler(const char *desc,
 	if (nr_installers > MAX_INSTALLER_HANDLER - 1)
 		return -1;
 
-	strncpy(supported_types[nr_installers].desc, desc,
+	strlcpy(supported_types[nr_installers].desc, desc,
 		      sizeof(supported_types[nr_installers].desc));
 	supported_types[nr_installers].installer = installer;
 	supported_types[nr_installers].data = data;
